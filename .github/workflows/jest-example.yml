@@ -3,16 +3,11 @@ on:
   push:
     branches: [main]
 
-env:
-  PROJECT_DIRECTORY: test
-
 jobs:
   testing:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Default
-        run: echo 'fake label ${{ env.PROJECT_DIRECTORY }} !'
       - uses: actions/checkout@v2
       - name: Use Node.js
         uses: actions/setup-node@v1
