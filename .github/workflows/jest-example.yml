@@ -1,0 +1,34 @@
+name: jest-example
+on:
+  push:
+    branches: [main]
+
+env:
+  PROJECT_DIRECTORY: jest-example
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Default
+        run: echo 'fake label ${{ env.PROJECT_DIRECTORY }} !'
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install dependencies
+        run: |
+          cd ${{ env.PROJECT_DIRECTORY }}
+          npm ci
+
+      - name: Run tests
+        run: |
+          cd ${{ env.PROJECT_DIRECTORY }}
+          npm run test:ci
+      - name: Check coverage
+        uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
+        with:
+          path: '${{ env.PROJECT_DIRECTORY }}/coverage/lcov.info'
+          min_coverage: 90
