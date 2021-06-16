@@ -20,15 +20,13 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         run: |
-          cd ${{ env.PROJECT_DIRECTORY }}
           npm ci
 
       - name: Run tests
         run: |
-          cd ${{ env.PROJECT_DIRECTORY }}
           npm run test:ci
       - name: Check coverage
         uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
         with:
-          path: '${{ env.PROJECT_DIRECTORY }}/coverage/lcov.info'
+          path: '/coverage/lcov.info'
           min_coverage: 90
