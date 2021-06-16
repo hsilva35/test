@@ -4,7 +4,7 @@ on:
     branches: [main]
 
 env:
-  PROJECT_DIRECTORY: ''
+  PROJECT_DIRECTORY: test
 
 jobs:
   testing:
