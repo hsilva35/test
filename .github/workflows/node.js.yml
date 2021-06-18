@@ -12,7 +12,7 @@ jobs:
     
     steps:
     - name: Default
-      run: echo 'envs ${{ secrets.env.AWS_NAME }}!'
+      run: echo 'envs ${{ secrets.env.dev.AWS_NAME }}!'
     - uses: actions/checkout@v2
     - name: Use Node.js
       uses: actions/setup-node@v1
