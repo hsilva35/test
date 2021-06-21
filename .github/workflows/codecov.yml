@@ -1,4 +1,4 @@
 # codecov.yml
 
 fixes:
-  - "/home/runner/work/test/test/::" # Correct paths
+  - "/home/runner/work/test/test/coverage" # Correct paths
