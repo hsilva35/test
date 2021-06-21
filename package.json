@@ -15,10 +15,7 @@
   },
   "type": "module",
   "jest": {
-    "coverageDirectory": "./coverage/",
     "collectCoverage": true,
-    "coverageReporters": [
-      "html"
-    ]
+    "coverageReporters": ["html","lcov"]
   }
 }
