@@ -33,3 +33,13 @@ jobs:
       uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
+    - name: Annotate Code Linting Results
+      uses: ataylorme/eslint-annotate-action@1.2.0
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        report-json: "eslint_report.json"
+    - name: Upload ESLint report
+      uses: actions/upload-artifact@v2
+      with:
+        name: eslint_report.json
+        path: eslint_report.json
