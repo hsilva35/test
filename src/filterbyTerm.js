@@ -1,9 +1,9 @@
-function filterByTerm(inputArr, searchTerm) {
-    const regex = new RegExp(searchTerm, "i");
+function filterByTerm (inputArr, searchTerm) {
+  const regex = new RegExp(searchTerm, 'i')
 
-    return inputArr.filter(function (arrayElement) {
-        return arrayElement.url.match(regex);
-    });
+  return inputArr.filter(function (arrayElement) {
+    return arrayElement.url.match(regex)
+  })
 }
 
-module.exports = filterByTerm;
+module.exports = filterByTerm

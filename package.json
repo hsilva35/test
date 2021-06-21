@@ -5,17 +5,28 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "test:ci": "jest --coverage --silent --forceExit"
+    "test:ci": "jest --coverage --silent --forceExit",
+    "lint": "eslint --fix --ext .js .",
+    "lint:report": "eslint --output-file eslint_report.json --format json src"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^7.29.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
     "jest": "^27.0.3"
   },
   "type": "module",
   "jest": {
     "collectCoverage": true,
-    "coverageReporters": ["html","lcov"]
+    "coverageReporters": [
+      "html",
+      "lcov"
+    ]
   }
 }
