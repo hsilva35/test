@@ -34,7 +34,7 @@ jobs:
         TOKENS=($SUMMARY)
 
         echo "summary: $SUMMARY"
-        echo "tokens: $TOKENS[2]"
+        echo "tokens: $(echo ${TOKENS[2]})"
         echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
 
         # var REF = 'refs/pull/27/merge.json';
