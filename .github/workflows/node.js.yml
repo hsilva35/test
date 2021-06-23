@@ -34,7 +34,7 @@ jobs:
         TOKENS=($SUMMARY)
 
         echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
-
+        COVERAGE=$(echo ${TOKENS[2]})
         echo $COVERAGE
         REF=${{ github.ref }}
         echo "github.ref: $REF"
