@@ -7,7 +7,11 @@ function filterByTerm (inputArr, searchTerm) {
 }
 
 function filterByName (inputArr, name) {
-  return inputArr.filter(element => element === name)
+  return inputArr.filter(element => element.name === name)
 }
 
-module.exports = { filterByTerm, filterByName }
+function filterByLastname (inputArr, lastname) {
+  return inputArr.filter(element => element.lastame === lastname)
+}
+
+module.exports = { filterByTerm, filterByName, filterByLastname }
