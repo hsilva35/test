@@ -26,11 +26,16 @@ function filterByC (inputArr, c) {
   return inputArr.filter(element => element.c === c)
 }
 
+function filterByD (inputArr, d) {
+  return inputArr.filter(element => element.c === d)
+}
+
 module.exports = {
   filterByTerm,
   filterByName,
   filterByLastname,
   filterByA,
   filterByB,
-  filterByC
+  filterByC,
+  filterByD
 }
