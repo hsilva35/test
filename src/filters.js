@@ -14,4 +14,23 @@ function filterByLastname (inputArr, lastname) {
   return inputArr.filter(element => element.lastame === lastname)
 }
 
-module.exports = { filterByTerm, filterByName, filterByLastname }
+function filterByA (inputArr, a) {
+  return inputArr.filter(element => element.a === a)
+}
+
+function filterByB (inputArr, b) {
+  return inputArr.filter(element => element.b === b)
+}
+
+function filterByC (inputArr, c) {
+  return inputArr.filter(element => element.c === c)
+}
+
+module.exports = {
+  filterByTerm,
+  filterByName,
+  filterByLastname,
+  filterByA,
+  filterByB,
+  filterByC
+}
