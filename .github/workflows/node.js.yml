@@ -50,5 +50,5 @@ jobs:
         filename: test__${{ env.BRANCH }}.json
         label: Test Coverage
         message: ${{ env.COVERAGE }}
-        color: green
+        color: orange
         namedLogo: jest
