@@ -6,4 +6,8 @@ function filterByTerm (inputArr, searchTerm) {
   })
 }
 
-module.exports = filterByTerm
+function filterByName (inputArr, name) {
+  return inputArr.filter(element => element === name)
+}
+
+module.exports = { filterByTerm, filterByName }

@@ -1,4 +1,4 @@
-const filterByTerm = require('../src/filterbyTerm')
+const filters = require('../src/filters')
 
 describe('Filter function', () => {
   test('it should filter by a search term (link)', () => {
@@ -9,7 +9,7 @@ describe('Filter function', () => {
     ]
     const output = [{ id: 3, url: 'https://www.link3.dev' }]
 
-    expect(filterByTerm(input, 'link')).toEqual(output)
-    expect(filterByTerm(input, 'LINK')).toEqual(output) // New test
+    expect(filters.filterByTerm(input, 'link')).toEqual(output)
+    expect(filters.filterByTerm(input, 'LINK')).toEqual(output) // New test
   })
 })

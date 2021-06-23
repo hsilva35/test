@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest --coverage",
     "test:ci": "jest --coverage --silent --forceExit",
+    "test:coverage": "jest --coverage --coverageReporters='text-summary'",
     "lint": "eslint --fix --ext .js .",
     "lint:report": "eslint --output-file eslint_report.json --format json src"
   },
@@ -27,7 +28,9 @@
     "coverageReporters": [
       "html",
       "lcov",
-      "json"
+      "json",
+      "text",
+      "clover"
     ]
   }
 }
