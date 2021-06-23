@@ -30,30 +30,23 @@ jobs:
       run: npm run lint:report
     - name: Get Coverage for badge
       run: |
-        SUMMARY="$(npm run test:coverage | tail -2 | head -1)"
+        SUMMARY="$(npm run test:coverage | grep Lines)"
         TOKENS=($SUMMARY)
 
-        echo "summary: $SUMMARY"
-        echo "tokens: $(echo ${TOKENS[2]})"
         echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
 
-        # var REF = 'refs/pull/27/merge.json';
+        echo $COVERAGE
         REF=${{ github.ref }}
-        # console.log('github.ref: ' + REF);
         echo "github.ref: $REF"
-        # var PATHS = REF.split('/');
         IFS='/' read -ra PATHS <<< "$REF"
-        # var BRANCH_NAME = PATHS[1] + PATHS[2];
         BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
-        # console.log(BRANCH_NAME); // 'pull_27'
         echo $BRANCH_NAME
-        # process.env.BRANCH = 'pull_27';
         echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
     - name: Create the Badge
       uses: schneegans/dynamic-badges-action@v1.0.0
       with:
         auth: ${{ secrets.GIST_SECRET }}
-        gistID: d028c539a04b9339b27aff7c865e1e1b
+        gistID: ${{ secrets.GIST_ID }}
         filename: test__${{ env.BRANCH }}.json
         label: Test Coverage
         message: ${{ env.COVERAGE }}
