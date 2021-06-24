@@ -32,7 +32,7 @@ jobs:
       run: |
         COV="$(npm run test:coverage | grep Lines |grep -Eo '[0-9]+\.[0-9]+')"
 
-        echo "COVERAGE=$(echo ${COV)" >> $GITHUB_ENV
+        echo "COVERAGE=$(echo $COV)" >> $GITHUB_ENV
         
         echo $COV
         REF=${{ github.ref }}
