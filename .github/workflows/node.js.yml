@@ -50,4 +50,4 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
           const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
-          github.issues.createComment({ issue_number, owner, repo, body: 'Test of comment' });
+          github.issues.createComment({ issue_number, owner, repo, body: 'Test of comment ${{ env.COVERAGE }}' });
