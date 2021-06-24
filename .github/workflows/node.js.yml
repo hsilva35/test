@@ -30,12 +30,11 @@ jobs:
       run: npm run lint:report
     - name: Get Coverage for badge
       run: |
-        SUMMARY="$(npm run test:coverage | grep Lines)"
-        TOKENS=($SUMMARY)
+        COV="$(npm run test:coverage | grep Lines |grep -Eo '[0-9]+\.[0-9]+')"
 
-        echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
-        COVERAGE=$(echo ${TOKENS[2]})
-        echo $COVERAGE
+        echo "COVERAGE=$(echo ${COV)" >> $GITHUB_ENV
+        
+        echo $COV
         REF=${{ github.ref }}
         echo "github.ref: $REF"
         IFS='/' read -ra PATHS <<< "$REF"
