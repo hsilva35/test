@@ -50,4 +50,4 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
           const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
-          github.issues.createComment({ issue_number, owner, repo, body: ![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/hsilva35/d028c539a04b9339b27aff7c865e1e1b/raw/test__${{ env.BRANCH }}.json) });
+          github.issues.createComment({ issue_number, owner, repo, body: 'Test of comment' });
