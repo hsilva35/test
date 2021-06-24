@@ -31,10 +31,10 @@ jobs:
     - name: Get Coverage for badge
       run: |
         COV="$(npm run test:coverage | grep Lines |grep -Eo '[0-9]+\.[0-9]+')"
-
-        echo "COVERAGE=$(echo $COV)" >> $GITHUB_ENV
-        
         echo $COV
+
+        echo "COVERAGE=$(echo ${COV})" >> $GITHUB_ENV
+        
         REF=${{ github.ref }}
         echo "github.ref: $REF"
         IFS='/' read -ra PATHS <<< "$REF"
