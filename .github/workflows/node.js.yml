@@ -30,7 +30,7 @@ jobs:
       run: npm run lint:report
     - name: Get Coverage for badge
       run: |
-        SUMMARY="$(npm run test:coverage | grep Lines |grep -Eo '[0-9]+\.[0-9]+')"
+        SUMMARY="$(npm run test:coverage | grep Lines )"
 
         echo "COVERAGE=$(echo ${SUMMARY} | grep -Eo '[0-9]+\.[0-9]+')" >> $GITHUB_ENV
 
