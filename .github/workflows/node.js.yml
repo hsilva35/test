@@ -31,9 +31,11 @@ jobs:
     - name: Get Coverage for badge
       run: |
         SUMMARY="$(npm run test:coverage | grep Lines )"
+        TOKENS=($SUMMARY)
 
-        echo "COVERAGE=$(echo ${SUMMARY} | grep -Eo '[0-9]+\.[0-9]+')" >> $GITHUB_ENV
-
+        echo "COVERAGE=$(echo ${TOKENS[2]}| grep -Eo '[0-9]+\.[0-9]+')" >> $GITHUB_ENV
+        COVERAGE=$(echo ${TOKENS[2]}| grep -Eo '[0-9]+\.[0-9]+')
+        echo $COVERAGE
         REF=${{ github.ref }}
         echo "github.ref: $REF"
         IFS='/' read -ra PATHS <<< "$REF"
