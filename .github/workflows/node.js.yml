@@ -47,6 +47,6 @@ jobs:
         gistID: ${{ secrets.GIST_ID }}
         filename: test__${{ env.BRANCH }}.json
         label: Test Coverage
-        message: ${{ env.COVERAGE }}
+        message: ${{ env.COVERAGE }}%
         color: orange
         namedLogo: jest
