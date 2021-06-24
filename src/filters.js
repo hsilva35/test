@@ -22,10 +22,15 @@ function filterByB (inputArr, b) {
   return inputArr.filter(element => element.b === b)
 }
 
+function filterByD (inputArr, c) {
+  return inputArr.filter(element => element.c === c)
+}
+
 module.exports = {
   filterByTerm,
   filterByName,
   filterByLastname,
   filterByA,
-  filterByB
+  filterByB,
+  filterByD
 }
