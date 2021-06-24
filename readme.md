@@ -91,6 +91,18 @@ In the step `Get Coverage for badge`, we can have the command `npm run test:cove
 
 It is important to clarify that the `coverageReporters` must be `text-summary` since from here the information that we are going to require for the construction of the badge will be extracted.
 
+If the execution of the GitHub action was successful, you will see in your gist something like the following: 
+
+![promt](./images-doc/gist-files.png)
+
+To add the badge to the documentation we will use `shields.io` and use the `endpoint` strategy, this way we will reference the file that has been saved in gist.
+```
+[Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/hsilva35/d7308637b6c4f3ae4c7d696aa64d4827/raw/test__heads_main.json)
+```
+And as a result we will have:
+
+![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/hsilva35/d7308637b6c4f3ae4c7d696aa64d4827/raw/test__heads_main.json)
+
 ## References
 - https://itnext.io/github-actions-code-coverage-without-third-parties-f1299747064d
 - https://dev.to/thejaredwilcurt/coverage-badge-with-github-actions-finally-59fa
